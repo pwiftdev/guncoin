@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-white;
+    background-color: #f9971f;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-guncoin-primary to-guncoin-secondary;
+  }
+  
+  .glow {
+    box-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+  }
+  
+  .glow-hover:hover {
+    box-shadow: 0 0 30px rgba(255, 107, 53, 0.5);
+  }
+  
+  .cinematic-text {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "kern" 1;
+    font-kerning: normal;
+  }
+  
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.9) translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+  
+  .animate-fade-in-scale {
+    animation: fadeInScale 0.7s ease-out;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  
+  @keyframes glow {
+    0%, 100% {
+      text-shadow: 0 0 50px rgba(0,0,0,1), 0 0 100px rgba(0,0,0,0.8), 0 0 150px rgba(0,0,0,0.6), 0 0 200px rgba(0,0,0,0.4), 0 4px 12px rgba(0,0,0,0.9);
+    }
+    50% {
+      text-shadow: 0 0 60px rgba(0,0,0,1), 0 0 120px rgba(0,0,0,0.9), 0 0 180px rgba(0,0,0,0.7), 0 0 240px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.9);
+    }
+  }
+  
+  @keyframes glitch1 {
+    0% { transform: translate(-2px, -2px); }
+    25% { transform: translate(-3px, -1px); }
+    50% { transform: translate(-1px, -3px); }
+    75% { transform: translate(-2px, -2px); }
+    100% { transform: translate(-2px, -2px); }
+  }
+
+  @keyframes glitch2 {
+    0% { transform: translate(2px, 2px); }
+    25% { transform: translate(3px, 1px); }
+    50% { transform: translate(1px, 3px); }
+    75% { transform: translate(2px, 2px); }
+    100% { transform: translate(2px, 2px); }
+  }
+}
+
