@@ -4,7 +4,7 @@ const Links = () => {
   const links = [
     {
       name: 'X Community',
-      url: 'https://x.com/i/communities/2012250526289977743',
+      url: 'https://x.com/i/communities/2016962175236268052',
       icon: FaXTwitter
     },
     {

@@ -121,7 +121,7 @@ const Header = () => {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-guncoin-background transition-all duration-300 group-hover:w-full"></span>
               </button>
               <a
-                href="https://x.com/i/communities/2012250526289977743"
+                href="https://x.com/i/communities/2016962175236268052"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="relative overflow-hidden px-8 py-3 bg-black/90 hover:bg-black text-white rounded-xl font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 border-2 border-white/10 group"
@@ -192,7 +192,7 @@ const Header = () => {
           {/* Join Community Button */}
           <div className="mt-16">
             <a
-              href="https://x.com/i/communities/2012250526289977743"
+              href="https://x.com/i/communities/2016962175236268052"
               target="_blank"
               rel="noopener noreferrer"
               className="relative overflow-hidden inline-block px-12 py-5 bg-black hover:bg-black/80 text-white rounded-2xl font-black text-2xl transition-all duration-300 shadow-2xl hover:scale-105 border-2 border-white/20 group"
