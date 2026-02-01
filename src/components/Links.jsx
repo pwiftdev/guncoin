@@ -9,7 +9,7 @@ const Links = () => {
     },
     {
       name: 'DEXScreener Chart',
-      url: 'https://dexscreener.com/solana/9X6HRtB8QfEbbgFdLAdjtxVg6XhH4Di6B7DiRErbpump',
+      url: 'https://dexscreener.com/solana/EgupCWYtBuVySuUyioHLws3nNcboEXoLx5FZjqgZpump',
       icon: FaChartLine
     }
   ]

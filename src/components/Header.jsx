@@ -5,7 +5,7 @@ const Header = () => {
   const [marketCap, setMarketCap] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
 
-  const CONTRACT_ADDRESS = '9X6HRtB8QfEbbgFdLAdjtxVg6XhH4Di6B7DiRErbpump'
+  const CONTRACT_ADDRESS = 'EgupCWYtBuVySuUyioHLws3nNcboEXoLx5FZjqgZpump'
 
   const fetchMarketCap = async () => {
     try {

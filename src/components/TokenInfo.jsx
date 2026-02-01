@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { FaCopy, FaCheck } from 'react-icons/fa6'
 
 const TokenInfo = () => {
-  const contractAddress = '9X6HRtB8QfEbbgFdLAdjtxVg6XhH4Di6B7DiRErbpump'
+  const contractAddress = 'EgupCWYtBuVySuUyioHLws3nNcboEXoLx5FZjqgZpump'
   const [copied, setCopied] = useState(false)
 
   const copyToClipboard = () => {
