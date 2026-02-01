@@ -21,7 +21,7 @@ const Header = () => {
               <img 
                 src="/newlogo.jpg" 
                 alt="$GUNCOIN Logo" 
-                className="h-12 w-12 md:h-16 md:w-16 object-contain"
+                className="h-12 w-12 md:h-16 md:w-16 object-cover rounded-full"
               />
               <div className="flex flex-col">
                 <span className="text-2xl md:text-3xl font-black text-white">

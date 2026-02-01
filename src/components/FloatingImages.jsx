@@ -80,7 +80,7 @@ const FloatingImages = ({ maxImages = 20 }) => {
           <img
             src={img.src}
             alt="Floating"
-            className="max-w-[120px] md:max-w-[180px] h-auto"
+            className={`max-w-[120px] md:max-w-[180px] h-auto ${img.src.includes('newlogo') ? 'rounded-full' : ''}`}
             style={{
               animation: 'float 6s ease-in-out infinite',
               animationDelay: `${Math.random() * 2}s`
