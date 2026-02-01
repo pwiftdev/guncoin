@@ -2,6 +2,53 @@ import { useState, useEffect } from 'react'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [marketCap, setMarketCap] = useState(null)
+  const [isLoading, setIsLoading] = useState(true)
+
+  const CONTRACT_ADDRESS = '9X6HRtB8QfEbbgFdLAdjtxVg6XhH4Di6B7DiRErbpump'
+
+  const fetchMarketCap = async () => {
+    try {
+      const response = await fetch(
+        `https://api.dexscreener.com/latest/dex/tokens/${CONTRACT_ADDRESS}`
+      )
+      const data = await response.json()
+      
+      if (data && data.pairs && data.pairs.length > 0) {
+        const pair = data.pairs[0]
+        const mcap = pair.marketCap || pair.fdv || pair.liquidity?.usd
+        if (mcap) {
+          setMarketCap(mcap)
+        }
+        setIsLoading(false)
+      } else {
+        setIsLoading(false)
+      }
+    } catch (error) {
+      console.error('Error fetching market cap:', error)
+      setIsLoading(false)
+    }
+  }
+
+  useEffect(() => {
+    fetchMarketCap()
+    const interval = setInterval(fetchMarketCap, 214)
+    return () => clearInterval(interval)
+  }, [])
+
+  const formatMarketCap = (value) => {
+    if (!value) return 'Loading...'
+    
+    if (value >= 1000000000) {
+      return `$${(value / 1000000000).toFixed(2)}B`
+    } else if (value >= 1000000) {
+      return `$${(value / 1000000).toFixed(2)}M`
+    } else if (value >= 1000) {
+      return `$${(value / 1000).toFixed(2)}K`
+    } else {
+      return `$${value.toFixed(2)}`
+    }
+  }
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id)
@@ -27,8 +74,16 @@ const Header = () => {
                 <span className="text-2xl md:text-3xl font-black text-white">
                   $GUNCOIN
                 </span>
-                <span className="text-xs md:text-sm text-gray-300 -mt-1">
+                <span className="text-xs md:text-sm text-gray-300 -mt-1 flex items-center gap-2">
                   Since 2014
+                  {!isLoading && marketCap && (
+                    <>
+                      <span className="text-white/50">•</span>
+                      <span className="text-guncoin-background font-bold">
+                        {formatMarketCap(marketCap)}
+                      </span>
+                    </>
+                  )}
                 </span>
               </div>
             </div>
@@ -93,6 +148,16 @@ const Header = () => {
         
         {/* Menu Content */}
         <div className={`relative h-full flex flex-col items-center justify-center transition-all duration-500 ${isMenuOpen ? 'translate-y-0' : '-translate-y-10'}`}>
+          {/* Market Cap Display */}
+          {!isLoading && marketCap && (
+            <div className="mb-12 text-center">
+              <div className="text-sm text-white/60 font-semibold tracking-widest mb-2">MARKET CAP</div>
+              <div className="text-4xl font-black text-guncoin-background">
+                {formatMarketCap(marketCap)}
+              </div>
+            </div>
+          )}
+
           {/* Menu Items */}
           <div className="space-y-8 text-center">
             <button
