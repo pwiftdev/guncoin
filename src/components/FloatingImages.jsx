@@ -4,7 +4,7 @@ const FloatingImages = ({ maxImages = 20 }) => {
   const [images, setImages] = useState([])
   
   const imageSources = [
-    '/GUNCOINLOGO.png',
+    '/newlogo.jpg',
     '/buttcoinpost.png'
   ]
 

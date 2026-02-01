@@ -65,7 +65,7 @@ const Loader = ({ onEnter }) => {
 
   // Preload assets
   useEffect(() => {
-    const imagesToPreload = ['/GUNCOINLOGO.png', '/buttcoinpost.png']
+    const imagesToPreload = ['/newlogo.jpg', '/buttcoinpost.png']
     const audioToPreload = '/gunmusic.mp4'
     
     let loadedCount = 0

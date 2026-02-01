@@ -1,16 +1,11 @@
-import { FaXTwitter, FaChartLine, FaArrowRight } from 'react-icons/fa6'
+import { FaXTwitter, FaArrowRight } from 'react-icons/fa6'
 
 const Links = () => {
   const links = [
     {
-      name: 'X Community',
-      url: 'https://x.com/i/communities/2016962175236268052',
+      name: 'Follow on X',
+      url: 'https://x.com/guncoiners',
       icon: FaXTwitter
-    },
-    {
-      name: 'DEXScreener Chart',
-      url: 'https://dexscreener.com/solana/7tgxvcnjgxcsoeambw8byicrhqe9jqnrf4wtolazxhqk',
-      icon: FaChartLine
     }
   ]
 
@@ -24,7 +19,7 @@ const Links = () => {
         JOIN THE MOVEMENT
       </h2>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+      <div className="flex justify-center">
         {links.map((link, index) => {
           const IconComponent = link.icon
           return (
@@ -33,7 +28,7 @@ const Links = () => {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative bg-black/90 hover:bg-black backdrop-blur-sm rounded-3xl p-8 md:p-10 border-2 border-white/10 transition-all duration-300 shadow-[0_25px_70px_rgba(0,0,0,0.5)] hover:shadow-[0_30px_90px_rgba(0,0,0,0.7)] transform hover:scale-105 overflow-hidden"
+              className="group relative bg-black/90 hover:bg-black backdrop-blur-sm rounded-3xl p-8 md:p-10 border-2 border-white/10 transition-all duration-300 shadow-[0_25px_70px_rgba(0,0,0,0.5)] hover:shadow-[0_30px_90px_rgba(0,0,0,0.7)] transform hover:scale-105 overflow-hidden max-w-md w-full"
             >
               {/* Shimmer effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
